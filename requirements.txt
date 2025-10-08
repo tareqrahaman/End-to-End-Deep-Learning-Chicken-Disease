@@ -8,4 +8,5 @@ types-PyYAML
 scipy
 Flask
 Flask-Cors
+gdown
 -e .
