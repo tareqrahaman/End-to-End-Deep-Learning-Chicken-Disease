@@ -5,7 +5,7 @@ from cnnClassifier import logger
 class DataIngestionPipeline:
     def __init__(self):
         pass
-    def star_data_ingestion(self):
+    def start_data_ingestion(self):
         try:
             config = ConfigurationManager()
             data_ingestion_config = config.get_data_ingestion_config()
