@@ -9,4 +9,5 @@ scipy
 Flask
 Flask-Cors
 gdown
+Pillow==9.5.0
 -e .
