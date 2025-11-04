@@ -1,7 +1,7 @@
 import os
 from cnnClassifier.constants import *
 from cnnClassifier.utils.common import  read_yaml, create_directories
-from cnnClassifier.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, ModelTrainerConfig 
+from cnnClassifier.entity.config_entity import DataIngestionConfig, PrepareBaseModelConfig, ModelTrainerConfig, EvaluationConfig
 
 class ConfigurationManager:
     def __init__(self,
@@ -61,3 +61,13 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    def get_evaluation_config(self) -> EvaluationConfig:
+        eval_config = EvaluationConfig(
+            path_of_model= self.config.model_trainer.trained_model_path,
+            training_data= os.path.join(self.config.data_ingestion.unzip_dir, "Chicken-fecal-images"),
+            all_params=self.params,
+            params_image_size=self.params.IMAGE_SIZE,
+            params_batch_size=self.params.BATCH_SIZE
+        )
+        return eval_config
