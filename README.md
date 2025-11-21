@@ -36,7 +36,7 @@ conda activate chicken-disease-DL
 pip install -r requirements.txt
 ```
 
-# When Data Ingestion from AWS & CI/CD applied
+# When Data Ingestion from AWS s3 bucket
 ### Export the environment
 ```bash
 export AWS_ACCESS_KEY_ID="YOUR_ACCESS_KEY_ID""
